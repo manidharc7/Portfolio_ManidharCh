@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h2 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-2">Portfolio</h2>
+            <h2 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-2">manidhar.dev</h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-md">
               Creating remarkable digital experiences with clean, efficient, and intuitive designs.
             </p>
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              © {year} Portfolio. All rights reserved.
+              © {year} manidhar.dev. All rights reserved.
             </p>
           </div>
         </div>

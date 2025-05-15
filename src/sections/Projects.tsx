@@ -25,63 +25,33 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'E-commerce Dashboard',
-      description: 'A comprehensive dashboard for e-commerce businesses with analytics, inventory management, and order processing.',
-      image: 'https://images.pexels.com/photos/6956807/pexels-photo-6956807.jpeg',
+      title: 'Feedback Management',
+      description: 'A student feedback system built using SQL, PHP, and simple HTML/CSS. Allows students to submit feedback and admins to manage responses.',
+      image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg',
       category: 'web',
-      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com',
+      tags: ['PHP', 'SQL', 'HTML', 'CSS'],
+      liveUrl: '',
+      repoUrl: 'https://github.com/manidharc7/dbms_studentfeedback',
     },
     {
       id: 2,
-      title: 'Mobile Banking App',
-      description: 'A secure and intuitive mobile banking application with transaction history, bill payments, and fund transfers.',
-      image: 'https://images.pexels.com/photos/6192337/pexels-photo-6192337.jpeg',
-      category: 'mobile',
-      tags: ['React Native', 'Redux', 'Firebase'],
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com',
+      title: 'News Aggregator',
+      description: 'A platform that aggregates news from multiple sources, providing users with real-time updates and personalized feeds.',
+      image: 'https://images.pexels.com/photos/261949/pexels-photo-261949.jpeg',
+      category: 'web',
+      tags: ['React', 'API', 'Tailwind CSS', 'Python'],
+      liveUrl: '',
+      repoUrl: 'https://github.com/manidharc7/SDP2-news-aggregator-FASD',
     },
     {
       id: 3,
-      title: 'Fitness Tracker',
-      description: 'A fitness tracking web app that helps users monitor their workouts, nutrition, and overall progress.',
-      image: 'https://images.pexels.com/photos/5711992/pexels-photo-5711992.jpeg',
+      title: 'Stock Trader',
+      description: 'A stock trading simulation platform for learning and practicing trading strategies in a risk-free environment.',
+      image: 'https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg',
       category: 'web',
-      tags: ['Vue.js', 'Node.js', 'MongoDB'],
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com',
-    },
-    {
-      id: 4,
-      title: 'Travel Blog',
-      description: 'A beautiful blog platform for travel enthusiasts to share their adventures and tips with the community.',
-      image: 'https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg',
-      category: 'design',
-      tags: ['UI/UX', 'WordPress', 'JavaScript'],
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com',
-    },
-    {
-      id: 5,
-      title: 'Task Management App',
-      description: 'A task management application to help teams organize and track their projects more efficiently.',
-      image: 'https://images.pexels.com/photos/7103/writing-notes-idea-conference.jpg',
-      category: 'web',
-      tags: ['React', 'Express', 'PostgreSQL'],
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com',
-    },
-    {
-      id: 6,
-      title: 'Restaurant Finder',
-      description: 'A location-based app to help users discover nearby restaurants based on their preferences and dietary restrictions.',
-      image: 'https://images.pexels.com/photos/4350099/pexels-photo-4350099.jpeg',
-      category: 'mobile',
-      tags: ['Flutter', 'Firebase', 'Google Maps API'],
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com',
+      tags: ['React', 'Node.js', 'Finance', 'Simulation'],
+      liveUrl: '',
+      repoUrl: 'https://github.com/manidharc7/Stock-trade',
     },
   ];
 
@@ -173,9 +143,10 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, inView }) => {
   return (
     <motion.div
+      whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(0,0,0,0.15)' }}
+      transition={{ type: 'spring', stiffness: 300 }}
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.5, delay: 0.1 * index }}
       className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg"
     >
       <div className="h-48 relative overflow-hidden group">
@@ -185,24 +156,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, inView }) => 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-          <a 
-            href={project.liveUrl} 
-            target="_blank" 
+          <motion.a
+            href={project.repoUrl}
+            target="_blank"
             rel="noopener noreferrer"
-            className="p-2 bg-white rounded-full text-gray-900 hover:text-primary-600 transition-colors"
-            aria-label="View live project"
-          >
-            <ExternalLink size={20} />
-          </a>
-          <a 
-            href={project.repoUrl} 
-            target="_blank" 
-            rel="noopener noreferrer"
+            whileHover={{ scale: 1.15, color: '#6366f1' }}
             className="p-2 bg-white rounded-full text-gray-900 hover:text-primary-600 transition-colors"
             aria-label="View GitHub repository"
           >
             <Github size={20} />
-          </a>
+          </motion.a>
         </div>
       </div>
       <div className="p-6">

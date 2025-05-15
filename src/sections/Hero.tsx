@@ -124,6 +124,22 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
 
+      {/* Animated Floating Shapes */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: -100 }}
+          animate={{ opacity: 0.5, scale: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+          className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full blur-2xl mix-blend-multiply animate-pulse"
+        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: 100 }}
+          animate={{ opacity: 0.4, scale: 1, x: 0 }}
+          transition={{ duration: 1.2, delay: 0.4 }}
+          className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-accent-400 to-primary-300 rounded-full blur-2xl mix-blend-multiply animate-pulse"
+        />
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="flex flex-col items-center">
           <motion.div 
@@ -161,9 +177,9 @@ const Hero: React.FC = () => {
             </div>
 
             <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.5, duration: 0.8, type: 'spring' }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
             >
               <span className="block text-2xl sm:text-3xl mb-4 text-primary-600 dark:text-primary-400">
@@ -231,7 +247,9 @@ const Hero: React.FC = () => {
                 Let's Talk
               </motion.a>
               <motion.a 
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1MLmTofMLzi0R-AJKcLPCWqwY-lpBQVP3/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 text-gray-700 dark:text-gray-300 rounded-lg font-medium flex items-center gap-2 transition-all shadow-lg hover:shadow-xl"
@@ -252,7 +270,12 @@ const Hero: React.FC = () => {
         >
           <div className="flex flex-col items-center">
             <span className="text-sm text-gray-600 dark:text-gray-400 mb-2">Scroll Down</span>
-            <ChevronDown className="animate-bounce text-gray-600 dark:text-gray-400" size={24} />
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 1.2 }}
+            >
+              <ChevronDown className="animate-none text-gray-600 dark:text-gray-400" size={24} />
+            </motion.div>
           </div>
         </motion.div>
       </div>

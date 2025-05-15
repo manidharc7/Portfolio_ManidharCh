@@ -18,7 +18,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -30,12 +29,13 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <a href="#home" className="text-2xl font-bold text-primary-600 dark:text-primary-400 font-display">
-            Portfolio
+          <a href="#home" className="text-2xl font-extrabold text-primary-700 dark:text-primary-200 tracking-tight hover:scale-105 transition-transform duration-200 flex items-center gap-2">
+            <span>manidhar.dev</span>
+            <svg width="24" height="24" fill="none" className="inline-block text-primary-700 dark:text-primary-200"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </a>
 
           {/* Desktop Navigation */}
@@ -48,9 +48,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors"
+                className="relative group text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm transition-colors px-1"
               >
-                {link.name}
+                <span>{link.name}</span>
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary-600 transition-all group-hover:w-full"></span>
               </a>
             ))}
             <button
