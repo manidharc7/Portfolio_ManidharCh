@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-2 xs:px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -59,19 +59,20 @@ const Contact: React.FC = () => {
             Get In <span className="text-primary-600 dark:text-primary-400">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-primary-600 dark:bg-primary-400 mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg px-2 xs:px-4">
             Have a project in mind or want to discuss potential opportunities? 
             I'm always open to new ideas and collaborations.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8 md:mb-0 px-2 xs:px-4"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Contact Information
             </h3>
             
@@ -117,7 +118,7 @@ const Contact: React.FC = () => {
               <h4 className="font-medium text-gray-900 dark:text-white mb-4">
                 Connect with me on social media
               </h4>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center md:justify-start">
                 <a 
                   href="https://www.linkedin.com/in/durga-manidhar-reddy-ch-bba30b284/" 
                   target="_blank" 
@@ -148,7 +149,7 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 xs:p-8 mx-2 xs:mx-4"
           >
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
@@ -162,7 +163,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 focus:outline-none input-animated"
+                  className="w-full px-3 py-2 xs:px-4 xs:py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 focus:outline-none input-animated text-sm sm:text-base"
                 />
               </div>
               
@@ -177,7 +178,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 focus:outline-none input-animated"
+                  className="w-full px-3 py-2 xs:px-4 xs:py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 focus:outline-none input-animated text-sm sm:text-base"
                 />
               </div>
               
@@ -192,7 +193,7 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 focus:outline-none input-animated"
+                  className="w-full px-3 py-2 xs:px-4 xs:py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 focus:outline-none input-animated text-sm sm:text-base"
                 />
               </div>
               
@@ -207,14 +208,14 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 focus:outline-none input-animated resize-none"
+                  className="w-full px-3 py-2 xs:px-4 xs:py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 focus:outline-none input-animated resize-none text-sm sm:text-base"
                 ></textarea>
               </div>
               
               <button
                 type="submit"
                 disabled={submitStatus === 'submitting'}
-                className="w-full flex justify-center items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors disabled:opacity-70"
+                className="w-full flex justify-center items-center gap-2 px-4 xs:px-6 py-2 xs:py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors disabled:opacity-70 text-sm sm:text-base"
               >
                 {submitStatus === 'submitting' ? (
                   <>Sending<span className="animate-pulse">...</span></>

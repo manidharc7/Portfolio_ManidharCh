@@ -149,7 +149,7 @@ const Hero: React.FC = () => {
             className="w-full max-w-4xl text-center"
           >
             {/* Decorative elements */}
-            <div className="flex justify-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -180,9 +180,9 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8, type: 'spring' }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight px-2 xs:px-4"
             >
-              <span className="block text-2xl sm:text-3xl mb-4 text-primary-600 dark:text-primary-400">
+              <span className="block text-lg xs:text-xl sm:text-2xl mb-4 text-primary-600 dark:text-primary-400">
                 Hello, I'm
               </span>
               <div className="relative min-h-[2.4em]">
@@ -209,7 +209,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 mb-8"
+              className="text-lg xs:text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-8 px-2 xs:px-4"
             >
               <span className="inline-block px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full">
                 Full Stack Developer | Data Science Student
@@ -220,7 +220,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+              className="text-base xs:text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed px-2 xs:px-4"
             >
               I create exceptional digital experiences with a focus on clean design, 
               accessibility, and performance. Let's build something amazing together.
@@ -230,7 +230,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-wrap gap-6 justify-center"
+              className="flex flex-wrap gap-4 xs:gap-6 justify-center px-2 xs:px-4"
             >
               <motion.a 
                 href="#contact"
@@ -242,7 +242,7 @@ const Hero: React.FC = () => {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl"
+                className="px-6 xs:px-8 py-3 xs:py-4 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-base xs:text-lg"
               >
                 Let's Talk
               </motion.a>
@@ -252,7 +252,7 @@ const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 text-gray-700 dark:text-gray-300 rounded-lg font-medium flex items-center gap-2 transition-all shadow-lg hover:shadow-xl"
+                className="px-6 xs:px-8 py-3 xs:py-4 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 text-gray-700 dark:text-gray-300 rounded-lg font-medium flex items-center gap-2 transition-all shadow-lg hover:shadow-xl text-base xs:text-lg"
               >
                 <Download size={20} />
                 Resume

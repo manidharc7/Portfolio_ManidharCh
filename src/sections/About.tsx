@@ -29,24 +29,25 @@ const About: React.FC = () => {
             About <span className="text-primary-600 dark:text-primary-400">Me</span>
           </h2>
           <div className="w-24 h-1 bg-primary-600 dark:bg-primary-400 mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg px-2 xs:px-4">
             A passionate student and aspiring professional in the fields of Data Science, Big Data Analytics, and Cybersecurity.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8 md:mb-0 px-2 xs:px-4"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">My Journey</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">My Journey</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4 text-base sm:text-lg">
               I am currently pursuing my education at KL University, where I'm specializing in Data Science and Big Data Analytics. 
               My academic journey is focused on developing expertise in handling large-scale data and extracting meaningful insights 
               from complex datasets.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 dark:text-gray-400 mb-6 text-base sm:text-lg">
               Alongside my data science specialization, I'm deeply interested in Cybersecurity and Cyber Threat Intelligence. 
               This combination allows me to understand both the analytical and security aspects of modern technology, preparing me 
               for the challenges of tomorrow's digital landscape.
@@ -57,7 +58,7 @@ const About: React.FC = () => {
                 <GraduationCap className="text-primary-600 dark:text-primary-400 mr-3 mt-1" size={20} />
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">KL University</h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                     Specializing in Data Science and Big Data Analytics
                   </p>
                 </div>
@@ -66,7 +67,7 @@ const About: React.FC = () => {
                 <Database className="text-secondary-600 dark:text-secondary-400 mr-3 mt-1" size={20} />
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Data Science</h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                     Big Data Analytics and Machine Learning
                   </p>
                 </div>
@@ -75,7 +76,7 @@ const About: React.FC = () => {
                 <Shield className="text-accent-600 dark:text-accent-400 mr-3 mt-1" size={20} />
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">Cybersecurity</h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                     Cyber Threat Intelligence and Security Analysis
                   </p>
                 </div>
@@ -87,33 +88,33 @@ const About: React.FC = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-2 xs:px-4"
           >
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <Brain className="text-primary-600 dark:text-primary-400 mb-4" size={32} />
               <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Data Science</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                 Machine Learning, Statistical Analysis, and Predictive Modeling
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <BarChart3 className="text-secondary-600 dark:text-secondary-400 mb-4" size={32} />
               <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Big Data</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                 Data Processing, Analytics, and Visualization
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <Shield className="text-accent-600 dark:text-accent-400 mb-4" size={32} />
               <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Cybersecurity</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                 Threat Intelligence and Security Analysis
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <Code className="text-primary-600 dark:text-primary-400 mb-4" size={32} />
               <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Technical Skills</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                 Programming, Data Analysis, and Security Tools
               </p>
             </div>

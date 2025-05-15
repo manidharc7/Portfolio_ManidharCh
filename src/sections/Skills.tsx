@@ -48,7 +48,7 @@ const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-2 xs:px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -61,12 +61,12 @@ const Skills: React.FC = () => {
             My <span className="text-primary-600 dark:text-primary-400">Skills</span>
           </h2>
           <div className="w-24 h-1 bg-primary-600 dark:bg-primary-400 mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg px-2 xs:px-4">
             Here are my core skills in Full Stack Development, Data Science, and Programming Languages.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           <SkillCategory title="Full Stack" skills={fullStackSkills} delay={0} inView={inView} />
           <SkillCategory title="Data Science" skills={dataScienceSkills} delay={0.2} inView={inView} />
           <SkillCategory title="Programming Languages" skills={programmingSkills} delay={0.4} inView={inView} />
@@ -90,9 +90,9 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({ title, skills, delay, inV
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, delay }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 xs:p-6 mb-6 sm:mb-0"
     >
-      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">{icon}{title}</h3>
+      <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">{icon}{title}</h3>
       <div className="space-y-6">
         {skills.map((skill, index) => (
           <SkillBar 
@@ -123,10 +123,10 @@ const SkillBar: React.FC<SkillBarProps> = ({ skill, delay, inView }) => {
   return (
     <div className="group">
       <div className="flex justify-between items-center mb-2">
-        <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
-        <span className="text-gray-600 dark:text-gray-400 text-sm">{skill.level}%</span>
+        <span className="text-gray-700 dark:text-gray-300 font-medium text-sm sm:text-base">{skill.name}</span>
+        <span className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">{skill.level}%</span>
       </div>
-      <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden relative">
+      <div className="h-2 sm:h-2.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden relative">
         <motion.div
           initial={{ width: 0 }}
           animate={inView ? { width: `${skill.level}%` } : { width: 0 }}

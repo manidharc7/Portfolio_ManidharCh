@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
       id: 1,
       title: 'Feedback Management',
       description: 'A student feedback system built using SQL, PHP, and simple HTML/CSS. Allows students to submit feedback and admins to manage responses.',
-      image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg',
+      image: '/feedback-management.jpg',
       category: 'web',
       tags: ['PHP', 'SQL', 'HTML', 'CSS'],
       liveUrl: '',
@@ -37,7 +37,7 @@ const Projects: React.FC = () => {
       id: 2,
       title: 'News Aggregator',
       description: 'A platform that aggregates news from multiple sources, providing users with real-time updates and personalized feeds.',
-      image: 'https://images.pexels.com/photos/261949/pexels-photo-261949.jpeg',
+      image: '/news-aggregator.jpg',
       category: 'web',
       tags: ['React', 'API', 'Tailwind CSS', 'Python'],
       liveUrl: '',
@@ -47,7 +47,7 @@ const Projects: React.FC = () => {
       id: 3,
       title: 'Stock Trader',
       description: 'A stock trading simulation platform for learning and practicing trading strategies in a risk-free environment.',
-      image: 'https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg',
+      image: '/stock-trader.jpg',
       category: 'web',
       tags: ['React', 'Node.js', 'Finance', 'Simulation'],
       liveUrl: '',
@@ -117,7 +117,7 @@ const Projects: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {filteredProjects.map((project, index) => (
               <ProjectCard 
@@ -149,11 +149,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, inView }) => 
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg"
     >
-      <div className="h-48 relative overflow-hidden group">
+      <div className="h-48 relative overflow-hidden group bg-gray-200 dark:bg-gray-700">
         <img 
           src={project.image} 
           alt={project.title} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          style={{ display: 'block' }}
         />
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
           <motion.a
@@ -168,16 +169,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, inView }) => 
           </motion.a>
         </div>
       </div>
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         <div className="mb-2 flex items-center justify-between">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white break-words">
             {project.title}
           </h3>
           <span className="px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full capitalize">
             {project.category}
           </span>
         </div>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
+        <p className="text-gray-600 dark:text-gray-400 mb-4 break-words">
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2">
