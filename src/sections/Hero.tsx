@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center py-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center py-20 overflow-hidden" aria-label="Hero" role="region">
       {/* Add style for gradient animation */}
       <style>
         {`
@@ -141,12 +141,18 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div className="flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="flex flex-col items-center"
+        >
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="w-full max-w-4xl text-center"
+            id="home-main"
           >
             {/* Decorative elements */}
             <div className="flex flex-row justify-center gap-3 xs:gap-4 mb-8">
@@ -190,14 +196,13 @@ const Hero: React.FC = () => {
                 <div className="relative mb-2">
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 animate-gradient">
                     {firstName}
-                    {currentLine === 'first' && !isWaiting && !isDeleting && <span className="typing-cursor"></span>}
                   </span>
                 </div>
                 {/* Last Name Line */}
                 <div className="relative">
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent-500 via-primary-500 to-secondary-500 animate-gradient">
                     {lastName}
-                    {currentLine === 'last' && !isWaiting && !isDeleting && <span className="typing-cursor"></span>}
+                    <span className="typing-cursor"></span>
                   </span>
                 </div>
                 {/* Glow effect */}
@@ -242,7 +247,8 @@ const Hero: React.FC = () => {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 xs:px-8 py-3 xs:py-4 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-base xs:text-lg"
+                className="px-6 xs:px-8 py-3 xs:py-4 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-base xs:text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+                aria-label="Scroll to contact section"
               >
                 Let's Talk
               </motion.a>
@@ -252,14 +258,15 @@ const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 xs:px-8 py-3 xs:py-4 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 text-gray-700 dark:text-gray-300 rounded-lg font-medium flex items-center gap-2 transition-all shadow-lg hover:shadow-xl text-base xs:text-lg"
+                className="px-6 xs:px-8 py-3 xs:py-4 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 text-gray-700 dark:text-gray-300 rounded-lg font-medium flex items-center gap-2 transition-all shadow-lg hover:shadow-xl text-base xs:text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+                aria-label="Open resume in new tab"
               >
                 <Download size={20} />
                 Resume
               </motion.a>
             </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
 
         <motion.div 
           initial={{ opacity: 0 }}
