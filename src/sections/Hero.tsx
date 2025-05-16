@@ -180,7 +180,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8, type: 'spring' }}
-              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight px-2 xs:px-4"
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight px-2 xs:px-4"
             >
               <span className="block text-lg xs:text-xl sm:text-2xl mb-4 text-primary-600 dark:text-primary-400">
                 Hello, I'm
