@@ -53,6 +53,16 @@ const Projects: React.FC = () => {
       liveUrl: '',
       repoUrl: 'https://github.com/manidharc7/Stock-trade',
     },
+    {
+      id: 4,
+      title: 'Research Journal Management',
+      description: 'A comprehensive system for managing research journals, submissions, reviews, and publications. Streamlines the academic publishing workflow.',
+      image: '/news-aggregator.jpg',
+      category: 'web',
+      tags: ['React', 'Node.js', 'Database', 'Management'],
+      liveUrl: '',
+      repoUrl: 'https://github.com/manidharc7/Research_jornal_management_fullstack',
+    },
   ];
 
   const categories = [

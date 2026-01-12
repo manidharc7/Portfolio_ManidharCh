@@ -4,6 +4,7 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
+import Certifications from './sections/Certifications';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -32,6 +33,7 @@ function App() {
           <Hero />
           <About />
           <Skills />
+          <Certifications />
           <Projects />
           <Contact />
         </main>

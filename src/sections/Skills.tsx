@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code, Database, BarChart3, Sparkles, Rocket, Brain, Shield, Terminal } from 'lucide-react';
+import { Sparkles, Rocket, Brain, Terminal } from 'lucide-react';
 
 interface Skill {
   name: string;

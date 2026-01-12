@@ -35,6 +35,15 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   useEffect(() => {
     const root = window.document.documentElement;
+    const initialTheme = getInitialTheme();
+    
+    // Set initial theme immediately
+    root.classList.remove('light', 'dark');
+    root.classList.add(initialTheme);
+  }, []);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
     
     root.classList.remove('light', 'dark');
     root.classList.add(theme);

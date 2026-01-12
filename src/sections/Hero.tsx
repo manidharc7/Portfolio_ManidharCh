@@ -2,13 +2,6 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Code, Palette, Server } from 'lucide-react';
 
-// Add keyframes for the gradient animation
-const gradientAnimation = {
-  '0%': { backgroundPosition: '0% 50%' },
-  '50%': { backgroundPosition: '100% 50%' },
-  '100%': { backgroundPosition: '0% 50%' }
-};
-
 const Hero: React.FC = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
