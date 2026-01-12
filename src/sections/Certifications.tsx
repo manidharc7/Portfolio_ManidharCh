@@ -55,7 +55,7 @@ const Certifications: React.FC = () => {
       title: 'Linguaskill Test Report',
       issuer: 'Cambridge English / Koneru Lakshmaiah Education Foundation',
       date: '2024',
-      description: 'English language proficiency test - Average Score: 163, CEFR Level: B2 (Upper Intermediate).',
+      description: 'English language proficiency test - Good Score: 163, CEFR Level: B2 (Upper Intermediate).',
       credentialId: '2300031813',
     },
   ];
